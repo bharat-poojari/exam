@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DESIGN AND ANALYSIS OF ALGORITHM</title>
+    <title>DAA PAPER 2</title>
     <style>
         /* ============================================================================
-   SIMPLE ELEGANT CSS FOR QUESTION PAPER CONVERTER
+   ELEGANT CSS FOR ACADEMIC MARKDOWN CONVERTER
    Clean book/PDF style with white background and black text
    ============================================================================ */
 
@@ -20,10 +20,11 @@ html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     color: #000000;
     background: #ffffff;
@@ -32,10 +33,10 @@ body {
 }
 
 /* ============================================================================
-   DOCUMENT CONTAINER
+   CONTAINER
    ============================================================================ */
 
-.document {
+.container {
     max-width: 8.5in;
     margin: 0 auto;
     padding: 40px;
@@ -46,35 +47,95 @@ body {
    HEADER STYLES
    ============================================================================ */
 
-.header {
+.document-header {
     text-align: center;
     margin-bottom: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     border-bottom: 2px solid #000000;
 }
 
-.title {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 15px;
+.document-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
     color: #000000;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
-.meta-info {
+.document-meta {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     margin-top: 15px;
     flex-wrap: wrap;
 }
 
-.meta-item {
+.document-meta .meta-item {
     font-size: 14px;
     color: #333333;
     font-weight: 500;
+    padding: 5px 12px;
+    background: #f8f8f8;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+.document-meta .meta-item strong {
+    color: #000000;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+/* ============================================================================
+   TABLE OF CONTENTS
+   ============================================================================ */
+
+.table-of-contents {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-left: 4px solid #000000;
+    border-radius: 0 4px 4px 0;
+}
+
+.toc-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.toc-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc-list li {
+    margin-bottom: 8px;
+    padding-left: 0;
+    position: relative;
+}
+
+.toc-list li.toc-indent {
+    padding-left: 20px;
+}
+
+.toc-list a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+    display: block;
+    padding: 4px 0;
+}
+
+.toc-list a:hover {
+    color: #000000;
+    text-decoration: underline;
 }
 
 /* ============================================================================
@@ -86,241 +147,441 @@ body {
 }
 
 /* ============================================================================
-   PART SECTIONS
+   SECTION STYLES
    ============================================================================ */
 
-.part {
+.content-section {
     margin-bottom: 40px;
     page-break-inside: avoid;
 }
 
-.part-title {
-    font-size: 20px;
+.section-heading {
     font-weight: 700;
     color: #000000;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #333333;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.part-description {
-    font-size: 14px;
+h1.section-heading {
+    font-size: 26px;
+    border-bottom: 2px solid #000000;
+}
+
+h2.section-heading {
+    font-size: 22px;
+}
+
+h3.section-heading {
+    font-size: 18px;
+}
+
+h4.section-heading {
+    font-size: 16px;
+}
+
+h5.section-heading, h6.section-heading {
+    font-size: 15px;
+}
+
+/* ============================================================================
+   PARAGRAPH STYLES
+   ============================================================================ */
+
+.paragraph {
+    font-size: 15px;
     color: #333333;
+    line-height: 1.7;
     margin-bottom: 20px;
-    padding-left: 10px;
+    text-align: justify;
+}
+
+.paragraph strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+.paragraph em {
     font-style: italic;
 }
 
-/* ============================================================================
-   QUESTIONS CONTAINER
-   ============================================================================ */
-
-.questions {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+.paragraph code {
+    font-family: 'Courier New', monospace;
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
 }
 
 /* ============================================================================
-   QUESTION STYLES
+   LIST STYLES
    ============================================================================ */
 
-.question {
+.content-list {
+    margin-left: 20px;
     margin-bottom: 20px;
-    page-break-inside: auto;
 }
 
-.question-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
+.content-list ul, .content-list ol {
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
-.question-number {
+.content-list li {
+    margin-bottom: 10px;
+    color: #333333;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.content-list li strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+.content-list li code {
+    font-family: 'Courier New', monospace;
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+}
+
+/* ============================================================================
+   CODE BLOCK STYLES
+   ============================================================================ */
+
+.code-block {
+    margin: 25px 0;
+    position: relative;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    background: #f8f9fa !important;
+}
+
+.code-block code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    display: block;
+    padding: 20px;
+    overflow-x: auto;
+    color: #333333;
+}
+
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+}
+
+.copy-button:hover {
+    opacity: 1;
+}
+
+.copy-button.copied {
+    background: #2e7d32;
+    opacity: 1;
+}
+
+/* Prism.js theme adjustments */
+.token.comment, .token.prolog, .token.doctype, .token.cdata {
+    color: #6a737d;
+}
+
+.token.punctuation {
+    color: #333333;
+}
+
+.token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted {
+    color: #005cc5;
+}
+
+.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+    color: #032f62;
+}
+
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
+    color: #d73a49;
+}
+
+.token.atrule, .token.attr-value, .token.keyword {
+    color: #d73a49;
+    font-weight: bold;
+}
+
+.token.function, .token.class-name {
+    color: #6f42c1;
+}
+
+.token.regex, .token.important, .token.variable {
+    color: #e36209;
+}
+
+/* ============================================================================
+   SPECIAL CONTENT BLOCKS
+   ============================================================================ */
+
+.special-block {
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #000000;
+    background: #f9f9f9;
+}
+
+.special-block.reference {
+    border-left-color: #2e7d32;
+}
+
+.special-block.example {
+    border-left-color: #1565c0;
+}
+
+.special-block.syntax {
+    border-left-color: #6a1b9a;
+}
+
+.special-block.functions {
+    border-left-color: #c62828;
+}
+
+.special-label {
     font-size: 16px;
     font-weight: 700;
     color: #000000;
-    min-width: 25px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
 }
 
-.marks {
-    font-size: 13px;
-    color: #666666;
-    font-weight: 500;
+.special-label::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: currentColor;
+    margin-right: 10px;
+    border-radius: 2px;
 }
 
-.question-text {
+.special-content {
     font-size: 15px;
-    font-weight: 600;
-    color: #000000;
-    line-height: 1.7;
-    margin-bottom: 15px;
-}
-
-/* ============================================================================
-   ANSWER STYLES
-   ============================================================================ */
-
-.answer {
-    margin-top: 15px;
-}
-
-.answer-label {
-    font-size: 15px;
-    font-weight: 700;
-    color: #000000;
-    margin-bottom: 8px;
-}
-
-.answer-text {
-    font-size: 15px;
-    font-weight: 400;
     color: #333333;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
-/* Bold styling for highlighted keywords */
-.answer-text strong {
-    font-weight: 700;
-    color: #000000;
+.special-content .content-line {
+    margin-bottom: 8px;
 }
 
 /* ============================================================================
-   TEXT LINES AND INDENTATION
+   HORIZONTAL RULE
    ============================================================================ */
 
-.text-line {
-    margin-bottom: 8px;
-    line-height: 1.7;
-}
-
-.empty-line {
-    height: 10px;
-}
-
-.indent-1 {
-    padding-left: 20px;
-}
-
-.indent-2 {
-    padding-left: 40px;
-}
-
-.indent-3 {
-    padding-left: 60px;
-}
-
-.indent-4 {
-    padding-left: 80px;
+.content-hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #cccccc, transparent);
+    margin: 40px 0;
 }
 
 /* ============================================================================
    FOOTER
    ============================================================================ */
 
-.footer {
-    margin-top: 50px;
-    padding-top: 20px;
+.document-footer {
+    margin-top: 60px;
+    padding-top: 25px;
     border-top: 1px solid #cccccc;
     text-align: center;
 }
 
 .footer-content p {
-    font-size: 13px;
+    font-size: 14px;
     color: #666666;
+    margin-bottom: 8px;
+}
+
+.document-stats {
+    font-size: 13px !important;
+    color: #888888 !important;
+    font-style: italic;
 }
 
 /* ============================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - MOBILE
    ============================================================================ */
 
 @media (max-width: 900px) {
-    .document {
+    .container {
         padding: 30px;
         max-width: 100%;
     }
     
-    .title {
+    .document-title {
+        font-size: 28px;
+    }
+    
+    .document-meta {
+        gap: 15px;
+    }
+    
+    h1.section-heading {
         font-size: 24px;
     }
     
-    .meta-info {
-        gap: 15px;
+    h2.section-heading {
+        font-size: 20px;
+    }
+    
+    .code-block code {
+        font-size: 13px;
+        padding: 15px;
     }
 }
 
 @media (max-width: 768px) {
-    .document {
+    .container {
         padding: 20px;
     }
     
-    .title {
-        font-size: 22px;
+    .document-title {
+        font-size: 24px;
     }
     
-    .part-title {
-        font-size: 18px;
-    }
-    
-    .question-text {
-        font-size: 14px;
-    }
-    
-    .answer-text {
-        font-size: 14px;
-    }
-    
-    .meta-info {
+    .document-meta {
         flex-direction: column;
-        gap: 5px;
+        gap: 8px;
         align-items: center;
     }
     
-    /* Adjust indentation for mobile */
-    .indent-1 { padding-left: 15px; }
-    .indent-2 { padding-left: 30px; }
-    .indent-3 { padding-left: 45px; }
-    .indent-4 { padding-left: 60px; }
-}
-
-@media (max-width: 480px) {
-    .document {
+    .document-meta .meta-item {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    
+    .table-of-contents {
         padding: 15px;
     }
     
-    .title {
-        font-size: 20px;
-    }
-    
-    .part-title {
+    .toc-title {
         font-size: 16px;
     }
     
-    .question-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+    .toc-list a {
+        font-size: 14px;
     }
     
-    .question-number {
-        font-size: 15px;
+    h1.section-heading {
+        font-size: 22px;
     }
     
-    .question-text {
+    h2.section-heading {
+        font-size: 18px;
+    }
+    
+    h3.section-heading {
+        font-size: 16px;
+    }
+    
+    .paragraph {
+        font-size: 14px;
+    }
+    
+    .content-list li {
+        font-size: 14px;
+    }
+    
+    .special-block {
+        padding: 15px;
+    }
+    
+    .special-content {
+        font-size: 14px;
+    }
+    
+    .code-block code {
+        font-size: 12px;
+        padding: 12px;
+    }
+    
+    .copy-button {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .document-title {
+        font-size: 20px;
+    }
+    
+    .document-header {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+    }
+    
+    h1.section-heading {
+        font-size: 20px;
+    }
+    
+    h2.section-heading {
+        font-size: 17px;
+    }
+    
+    .paragraph {
         font-size: 13px;
     }
     
-    .answer-text {
+    .content-list {
+        margin-left: 15px;
+    }
+    
+    .content-list li {
         font-size: 13px;
     }
     
-    .indent-1 { padding-left: 12px; }
-    .indent-2 { padding-left: 24px; }
-    .indent-3 { padding-left: 36px; }
-    .indent-4 { padding-left: 48px; }
+    .code-block {
+        margin: 20px -15px;
+        border-radius: 0;
+    }
+    
+    .code-block pre {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .special-block {
+        margin: 20px -15px;
+        border-radius: 0;
+        border-left: none;
+        border-right: 4px solid #000000;
+    }
 }
 
 /* ============================================================================
@@ -340,98 +601,163 @@ body {
         color: black !important;
     }
     
-    .document {
+    .container {
         max-width: 100%;
         padding: 0;
         margin: 0;
     }
     
-    .header {
+    .document-header {
         border-bottom: 1pt solid black;
         margin-bottom: 0.3in;
         padding-bottom: 0.2in;
     }
     
-    .title {
+    .document-title {
         font-size: 16pt;
         margin-bottom: 0.1in;
     }
     
-    .meta-item {
-        font-size: 10pt;
+    .document-meta .meta-item {
+        font-size: 9pt;
+        border: 0.5pt solid #cccccc;
+        background: #ffffff;
     }
     
-    .part {
+    .table-of-contents {
+        border-left: 2pt solid black;
+        background: #ffffff !important;
+        margin-bottom: 0.3in;
+    }
+    
+    .toc-title {
+        font-size: 11pt;
+        border-bottom: 0.5pt solid #cccccc;
+    }
+    
+    .toc-list a {
+        font-size: 10pt;
+        color: #000000;
+    }
+    
+    .content-section {
         margin-bottom: 0.3in;
         page-break-inside: avoid;
     }
     
-    .part-title {
+    .section-heading {
+        font-weight: 700;
+        color: #000000;
+        border-bottom: 0.5pt solid #cccccc;
+        page-break-after: avoid;
+    }
+    
+    h1.section-heading {
         font-size: 14pt;
-        border-bottom: 0.5pt solid black;
+        border-bottom: 1pt solid black;
     }
     
-    .question {
-        margin-bottom: 0.2in;
-        page-break-inside: auto;
+    h2.section-heading {
+        font-size: 12pt;
     }
     
-    .question-number {
+    h3.section-heading {
         font-size: 11pt;
     }
     
-    .marks {
-        font-size: 9pt;
-    }
-    
-    .question-text {
+    .paragraph {
         font-size: 11pt;
-        font-weight: 600;
+        text-align: left;
+        margin-bottom: 0.15in;
     }
     
-    .answer-label {
+    .content-list {
+        margin-left: 0.2in;
+        margin-bottom: 0.15in;
+    }
+    
+    .content-list li {
         font-size: 11pt;
-        font-weight: 700;
-    }
-    
-    .answer-text {
-        font-size: 11pt;
-        font-weight: 400;
-    }
-    
-    .answer-text strong {
-        font-weight: 700;
-    }
-    
-    .text-line {
         margin-bottom: 0.05in;
     }
     
-    .footer {
+    .code-block {
+        margin: 0.2in 0;
+        break-inside: avoid;
+    }
+    
+    .code-block pre {
+        border: 0.5pt solid #cccccc;
+        background: #ffffff !important;
+    }
+    
+    .code-block code {
+        font-size: 9pt;
+        padding: 0.15in;
+        color: #000000;
+    }
+    
+    /* Hide copy buttons in print */
+    .copy-button {
+        display: none !important;
+    }
+    
+    .special-block {
+        margin: 0.2in 0;
+        padding: 0.15in;
+        border-left: 2pt solid #000000;
+        background: #ffffff !important;
+        break-inside: avoid;
+    }
+    
+    .special-label {
+        font-size: 11pt;
+    }
+    
+    .special-content {
+        font-size: 11pt;
+    }
+    
+    .content-hr {
+        height: 0.5pt;
+        margin: 0.3in 0;
+    }
+    
+    .document-footer {
         margin-top: 0.3in;
         padding-top: 0.1in;
-        border-top: 0.5pt solid #ccc;
+        border-top: 0.5pt solid #cccccc;
     }
     
     .footer-content p {
         font-size: 9pt;
+        color: #666666;
     }
     
-    /* Remove all transitions and shadows for print */
+    /* Remove all transitions, shadows, and backgrounds for print */
     * {
         box-shadow: none !important;
         transition: none !important;
     }
     
-    /* Ensure proper page breaks between parts */
-    .part {
-        page-break-after: auto;
-        page-break-before: auto;
+    /* Ensure proper page breaks */
+    .content-section, .special-block, .code-block {
+        page-break-inside: avoid;
     }
     
-    /* Don't break inside questions */
-    .question {
-        page-break-inside: avoid;
+    h1, h2 {
+        page-break-after: avoid;
+    }
+    
+    /* No URLs in print */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #666666;
+    }
+    
+    a[href^="#"]::after {
+        content: "";
     }
 }
 
@@ -441,6 +767,7 @@ body {
 
 ::selection {
     background: rgba(0, 0, 0, 0.1);
+    color: #000000;
 }
 
 /* Hide scrollbar for print */
@@ -449,758 +776,700 @@ body {
         display: none;
     }
 }
+
+/* Focus styles for accessibility */
+:focus {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Improve dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+    .container, body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+}
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
 </head>
 <body>
-    <div class="document">
+    <div class="container">
         
-        <header class="header">
-            <h1 class="title">
-                DESIGN AND ANALYSIS OF ALGORITHM
-            </h1>
-            <div class="meta-info">
-                
-                <div class="meta-item">February - 2024</div>
-                
-                
-            </div>
+        <header class="document-header">
+            <h1 class="document-title">**January / February - 2025**</h1>
+            
         </header>
+        
+        
+        <nav class="table-of-contents">
+            <h2 class="toc-title">Table of Contents</h2>
+            <ul class="toc-list">
+                
+            <li class="">
+                <a href="#design-and-analysis-of-algorithm"><strong>DESIGN AND ANALYSIS OF ALGORITHM</strong></a>
+            </li>
+            
+
+            <li class="toc-indent">
+                <a href="#part-a"><strong>PART - A</strong></a>
+            </li>
+            
+
+            <li class="toc-indent">
+                <a href="#part-b"><strong>PART - B</strong></a>
+            </li>
+            
+
+            <li class="toc-indent">
+                <a href="#part-c"><strong>PART - C</strong></a>
+            </li>
+            
+            </ul>
+        </nav>
         
         <main class="content">
             
-            <div class="part" id="part-1">
-                <h2 class="part-title">PART - A</h2>
+            <section class="content-section" id="design-and-analysis-of-algorithm">
+                <h1 class="section-heading"><strong>DESIGN AND ANALYSIS OF ALGORITHM-2</strong></h1>
             
+<pre class="paragraph"><strong>January / February - 2025</strong></pre>
+<hr class="content-hr">
+</section>
 
-                <div class="part-description">
-                    Answer any five questions from this part each carries two marks : (5 x 2 =10)
-                </div>
-                
-<div class="questions">
-
-        <div class="question" id="q1-1">
-            <div class="question-header">
-                <span class="question-number">1.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">What is an algorithm ?</div>
-            </div>
+            <section class="content-section" id="part-a">
+                <h2 class="section-heading"><strong>PART - A</strong></h2>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">An algorithm is a step-by-step, unambiguous, finite, and effective procedure for solving a well-defined computational problem. It takes zero or more inputs, produces at least one output, and terminates after a finite number of steps. In essence, it is a recipe or a precise set of instructions to accomplish a specific task.</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Answer any five questions from this part each carries two marks : (5 × 2 = 10)</strong></pre>
+<hr class="content-hr">
+</section>
 
-        <div class="question" id="q1-2">
-            <div class="question-header">
-                <span class="question-number">2.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">What is time complexity of an algorithm ?</div>
-            </div>
+            <section class="content-section" id="1-what-is-an-algorithm">
+                <h3 class="section-heading"><strong>1. What is an algorithm ?</strong></h3>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">Time complexity:</div>
-<div class="text-line">	A measure of how the running time of an algorithm grows with the size of its input n. It is usually expressed using asymptotic notation (e.g., O(n),O(n2)) and counts the 	number of basic operations rather than actual clock time.</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Ans :</strong>  
+An algorithm is a step-by-step, unambiguous, finite, and effective procedure for solving a well-defined computational problem. It takes zero or more inputs, produces at least one output, and terminates after a finite number of steps. In essence, it is a recipe or a precise set of instructions to accomplish a specific task.</pre>
+<ol class="content-list"><li><strong>Input :</strong> Zero or more quantities are externally supplied.</li>
+<li><strong>Output :</strong> At least one quantity is produced.</li>
+<li><strong>Definiteness :</strong> Each instruction is clear and unambiguous.</li>
+<li><strong>Finiteness :</strong> If we trace out the instructions of an algorithm, then for all cases, the algorithm terminates after a finite number of steps.</li>
+<li><strong>Effectiveness :</strong> Every instruction must be very basic so that it can be carried out, in principle, by a person using only pencil and paper. It is not enough that each operation be definite as in criterion 3; it also must be feasible.</li></ol>
+<hr class="content-hr">
+</section>
 
-        <div class="question" id="q1-3">
-            <div class="question-header">
-                <span class="question-number">3.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Define graph.</div>
-            </div>
+            <section class="content-section" id="2-define-time-and-space-complexity-of-an-algorithm">
+                <h3 class="section-heading"><strong>2. Define Time and space complexity of an algorithm.</strong></h3>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">A graph is a non-linear data structure consisting of a finite set of vertices (nodes) and a finite set of edges that connect pairs of vertices.</div>
-<div class="text-line">	Formally, a graph G is represented as:</div>
-<div class="text-line">	G = (V, E)</div>
-<div class="text-line">	where</div>
-<div class="text-line">	V = set of vertices</div>
-<div class="text-line">	E = set of edges connecting the vertices</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Ans :</strong></pre>
+<pre class="paragraph"><strong>Time complexity:</strong>  
+A measure of how the running time of an algorithm grows with the size of its input \( n \). It is usually expressed using asymptotic notation (e.g., \( O(n), O(n^2) \)) and counts the number of basic operations rather than actual clock time.</pre>
+<pre class="paragraph"><strong>Space complexity:</strong>  
+A measure of the total memory an algorithm uses as a function of input size \( n \). It includes memory for input, variables, data structures, and recursion/stack frames, and is also expressed asymptotically (e.g., \( O(1), O(n) \)).</pre>
+<hr class="content-hr">
+</section>
 
-        <div class="question" id="q1-4">
-            <div class="question-header">
-                <span class="question-number">4.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">What is minimum spanning tree ?</div>
-            </div>
+            <section class="content-section" id="3-list-any-four-characteristics-of-an-algorithm">
+                <h3 class="section-heading"><strong>3. List any four characteristics of an algorithm.</strong></h3>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">A Minimum Spanning Tree (MST) is a subgraph of a connected, weighted, undirected graph that:</div>
-<div class="text-line">	Includes all the vertices of the graph</div>
-<div class="text-line">	Is a tree (i.e., has no cycles)</div>
-<div class="text-line">	Has the minimum possible total edge weight among all spanning trees of the graph</div>
-<div class="text-line">	If a graph has V vertices, then its MST will contain exactly V − 1 edges.</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Ans:</strong></pre>
+<ul class="content-list"><li><strong>Input</strong> – It should accept zero or more well-defined inputs.</li>
+<li><strong>Output</strong> – It must produce at least one definite output.</li>
+<li><strong>Definiteness (Clarity)</strong> – Every step must be clear and unambiguous.</li>
+<li><strong>Finiteness</strong> – It must terminate after a finite number of steps.</li>
+<li><strong>Effectiveness</strong> – Each step must be basic enough to be carried out exactly and in a finite time.</li>
+<li><strong>Generality</strong> – It should work for all valid inputs of the defined problem.</li></ul>
+<hr class="content-hr">
+</section>
 
-        <div class="question" id="q1-5">
-            <div class="question-header">
-                <span class="question-number">5.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Define greedy method.</div>
-            </div>
+            <section class="content-section" id="4-define-dfs-and-bfs">
+                <h3 class="section-heading"><strong>4. Define DFS and BFS.</strong></h3>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">The Greedy Method is a problem-solving technique in which a solution is built step-by-step, and at each step the best possible (locally optimal) choice is selected without reconsidering previous decisions.</div>
-<div class="text-line">	The hope is that these locally optimal choices will lead to a globally optimal solution.</div>
-<div class="text-line">	This method works correctly only for problems that satisfy optimal substructure and the greedy-choice property. Examples include Kruskal’s algorithm, Prim’s algorithm, and the Fractional Knapsack problem.</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Ans:</strong></pre>
+<pre class="paragraph"><strong>Depth-First Search (DFS):</strong>  
+A graph/tree traversal algorithm that explores as far along each branch as possible before backtracking. It uses a stack (either explicit or via recursion) to remember the path of exploration.</pre>
+<pre class="paragraph"><strong>Breadth-First Search (BFS):</strong>  
+A graph/tree traversal algorithm that visits all the vertices at the present depth level before moving to the next level. It uses a queue to process nodes in increasing order of their distance from the start node.</pre>
+<hr class="content-hr">
+</section>
 
-        <div class="question" id="q1-6">
-            <div class="question-header">
-                <span class="question-number">6.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">What do you mean by divide and conquer technique ?</div>
-            </div>
+            <section class="content-section" id="5-what-is-greedy-technique">
+                <h3 class="section-heading"><strong>5. What is greedy technique ?</strong></h3>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">Divide and Conquer is a problem-solving technique in which a problem is broken into smaller subproblems, each subproblem is solved independently, and then the solutions of the subproblems are combined to obtain the final solution.</div>
-<div class="text-line">	It works in three phases:</div>
-<div class="text-line">	Divide</div>
-<div class="text-line">	The original problem is divided into two or more smaller subproblems of the same type.</div>
-<div class="text-line">	Conquer</div>
-<div class="text-line">	Each subproblem is solved recursively. If the subproblem is small enough, it is solved directly.</div>
-<div class="text-line">	Combine</div>
-<div class="text-line">	The solutions of the subproblems are merged to obtain the solution of the original problem.</div>
-<div class="text-line">	Examples of algorithms using this technique include Merge Sort, Quick Sort, Binary Search, and Strassen’s Matrix Multiplication.</div>
-            </div>
-        </div>
-        
-        </div>
-        
-</div>
-</div>
+<pre class="paragraph"><strong>Ans:</strong>  
+A problem-solving strategy in which an algorithm builds a solution step-by-step, always choosing the best (locally optimal) option available at each step with the hope that these local choices will lead to a globally optimal solution.</pre>
+<pre class="paragraph">It does not reconsider previous choices, so it is simple and efficient, but it works correctly only for problems that satisfy properties like greedy choice and optimal substructure (e.g., Kruskal’s and Prim’s algorithms).</pre>
+<hr class="content-hr">
+</section>
 
-            <div class="part" id="part-2">
-                <h2 class="part-title">PART - B</h2>
+            <section class="content-section" id="6-define-sorting-and-searching">
+                <h3 class="section-heading"><strong>6. Define sorting and searching.</strong></h3>
             
+<pre class="paragraph"><strong>Ans:</strong>  
+<strong>Sorting:</strong>  
+The process of arranging the elements of a list or dataset in a specific order (typically ascending or descending) based on a key or value, such as numbers or strings.</pre>
+<pre class="paragraph"><strong>Searching:</strong>  
+The process of finding the location or presence of a specific element (key) within a list, array, or data structure.</pre>
+<hr class="content-hr">
+</section>
 
-                <div class="part-description">
-                    Answer any four questions.Each question carries 5 marks : (4 x 5 = 20)
-                </div>
-                
-<div class="questions">
-
-        <div class="question" id="q2-1">
-            <div class="question-header">
-                <span class="question-number">7.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Write an algorithm for bubble sort and find its time complexity.</div>
-            </div>
+            <section class="content-section" id="part-b">
+                <h2 class="section-heading"><strong>PART - B</strong></h2>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">Bubble Sort is a simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed.</div>
-<div class="text-line">	Algorithm (Step-by-Step)</div>
-<div class="text-line">	Algorithm BubbleSort(A[0..n-1])</div>
-<div class="text-line">	// Sorts a given array by bubble sort</div>
-<div class="text-line">	// Input: An array A[0..n-1] of orderable elements</div>
-<div class="text-line">	// Output: Array A[0..n-1] sorted in non-decreasing order</div>
-<div class="text-line">	for i ← 0 to n-2 do</div>
-<div class="text-line indent-1">	    for j ← 0 to n-2-i do</div>
-<div class="text-line indent-2">	        if A[j+1] < A[j]</div>
-<div class="text-line indent-3">	            // Swap A[j] and A[j+1]</div>
-<div class="text-line indent-3">	            temp ← A[j]</div>
-<div class="text-line indent-3">	            A[j] ← A[j+1]</div>
-<div class="text-line indent-3">	            A[j+1] ← temp</div>
-<div class="text-line">	In each pass (outer loop), the largest unsorted element "bubbles up" to its correct position at the end.</div>
-<div class="text-line">	The inner loop compares adjacent pairs and swaps them if they're in wrong order.</div>
-<div class="text-line">	After each pass, the next largest element is in place, so inner loop range decreases.</div>
-<div class="text-line">	The optimized version stops early if no swaps occur (array is sorted).</div>
-<div class="text-line">	Time Complexity</div>
-<div class="text-line">	Best Case (Optimized): O(n) - Array already sorted, one pass with n-1 comparisons</div>
-<div class="text-line">	Average Case: Θ(n²)</div>
-<div class="text-line">	Worst Case: O(n²) - Array sorted in reverse order</div>
-<div class="text-line">	Space Complexity</div>
-<div class="text-line">	O(1) - Constant space, in-place sorting.</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Answer any four of the following each carries five marks : (4 × 5 = 20)</strong></pre>
+<hr class="content-hr">
+</section>
 
-        <div class="question" id="q2-2">
-            <div class="question-header">
-                <span class="question-number">8.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Solve the given Lnapsack problem using Brute Force technique. (W1,W2,W3)=(20,25,10) ,(P1,P2,P3)=(30,40,35), M=40</div>
+            <section class="content-section" id="7-what-are-symmetric-notations-explain">
+                <h3 class="section-heading"><strong>7. What are symmetric notations ? Explain.</strong></h3>
+            
+<pre class="paragraph"><strong>Ans:</strong>  
+Asymptotic notations are used to describe the growth rate of an algorithm’s running time or memory as the input size \( n \) becomes very large.  
+They help compare algorithms without worrying about hardware, programming language, compiler, or system speed. We count operations, not seconds.  
+There are three main symmetric notations:</pre>
+<ul class="content-list"><li><strong>Big-O notation</strong></li>
+<li><strong>Big-Omega notation</strong></li>
+<li><strong>Big-Theta notation</strong></li></ul>
+<pre class="paragraph">These give upper, lower, and exact bounds on time complexity.</pre>
+<hr class="content-hr">
+</section>
+
+            <section class="content-section" id="big-o-notation-ofn">
+                <h4 class="section-heading"><strong>BIG-O NOTATION → \( O(f(n)) \) :</strong></h4>
+            
+<pre class="paragraph"><strong>Meaning:</strong>  
+Big-O gives an upper bound on the time complexity. It tells the maximum rate at which time grows. So, the algorithm will not grow faster than \( f(n) \).</pre>
+<pre class="paragraph"><strong>Formal Definition:</strong>  
+\( T(n) = O(f(n)) \) if there exist constants \( c > 0 \) and \( n_0 > 0 \) such that  
+\[
+T(n) \leq c \cdot f(n) \quad \text{for all } n \geq n_0
+\]</pre>
+<pre class="paragraph"><strong>Intuition:</strong>  
+Worst-case growth rate.</pre>
+<pre class="paragraph"><strong>Example:</strong>  
+\( T(n) = 3n^2 + 5n + 2 \)  
+This is \( O(n^2) \) because for large \( n \), \( n^2 \) grows faster than \( n \) or constants.</pre>
+<pre class="paragraph"><strong>Other examples:</strong>  
+Linear search → \( O(n) \)  
+Binary search → \( O(\log n) \)  
+Bubble sort → \( O(n^2) \)</pre>
+<hr class="content-hr">
+</section>
+
+            <section class="content-section" id="big-omega-notation-omegafn">
+                <h4 class="section-heading"><strong>BIG-OMEGA NOTATION → \( \Omega(f(n)) \):</strong></h4>
+            
+<pre class="paragraph"><strong>Meaning:</strong>  
+Big-Omega gives a lower bound on time complexity. It tells the minimum time the algorithm will take. So, the algorithm will grow at least as fast as \( f(n) \).</pre>
+<pre class="paragraph"><strong>Formal Definition:</strong>  
+\( T(n) = \Omega(f(n)) \) if there exist constants \( c > 0 \) and \( n_0 > 0 \) such that  
+\[
+T(n) \geq c \cdot f(n) \quad \text{for all } n \geq n_0
+\]</pre>
+<pre class="paragraph"><strong>Intuition:</strong>  
+Best-case lower bound.</pre>
+<pre class="paragraph"><strong>Example:</strong>  
+\( T(n) = 3n^2 + 5n + 2 \)  
+This is \( \Omega(n^2) \)</pre>
+<hr class="content-hr">
+</section>
+
+            <section class="content-section" id="big-theta-notation-thetafn">
+                <h4 class="section-heading"><strong>BIG-THETA NOTATION → \( \Theta(f(n)) \):</strong></h4>
+            
+<pre class="paragraph"><strong>Meaning:</strong>  
+Big-Theta gives a tight bound. It represents exact asymptotic growth. So, the algorithm grows at the same rate as \( f(n) \).</pre>
+<pre class="paragraph"><strong>Formal Definition:</strong>  
+\( T(n) = \Theta(f(n)) \) if there exist positive constants \( c_1, c_2, \) and \( n_0 \) such that  
+\[
+c_1 \cdot f(n) \leq T(n) \leq c_2 \cdot f(n) \quad \text{for all } n \geq n_0
+\]</pre>
+<pre class="paragraph"><strong>Intuition:</strong>  
+Both an upper and lower bound.</pre>
+<pre class="paragraph"><strong>Example:</strong>  
+\( T(n) = 3n^2 + 5n + 2 \)  
+This is \( \Theta(n^2) \) because it is \( O(n^2) \) and also \( \Omega(n^2) \)</pre>
+<hr class="content-hr">
+
+            <div class="code-block">
+                <pre><code class="language-text">for i = 1 to n:
+    constant work</code></pre>
             </div>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">We list all possible combinations of items and select the one that gives the maximum profit without exceeding the capacity.</div>
-<div class="text-line">	Step 1: List all subsets with total weight and profit</div>
-<div class="text-line">	No item selected</div>
-<div class="text-line">	Total Weight = 0</div>
-<div class="text-line">	Total Profit = 0</div>
-<div class="text-line">	Item 1</div>
-<div class="text-line">	Weight = 20</div>
-<div class="text-line">	Profit = 30</div>
-<div class="text-line">	Item 2</div>
-<div class="text-line">	Weight = 25</div>
-<div class="text-line">	Profit = 40</div>
-<div class="text-line">	Item 3</div>
-<div class="text-line">	Weight = 10</div>
-<div class="text-line">	Profit = 35</div>
-<div class="text-line">	Item 1 + Item 2</div>
-<div class="text-line">	Weight = 20 + 25 = 45 > 40 (Not allowed)</div>
-<div class="text-line">	Item 1 + Item 3</div>
-<div class="text-line">	Weight = 20 + 10 = 30</div>
-<div class="text-line">	Profit = 30 + 35 = 65</div>
-<div class="text-line">	Item 2 + Item 3</div>
-<div class="text-line">	Weight = 25 + 10 = 35</div>
-<div class="text-line">	Profit = 40 + 35 = 75</div>
-<div class="text-line">	Item 1 + Item 2 + Item 3</div>
-<div class="text-line">	Weight = 20 + 25 + 10 = 55 > 40 (Not allowed)</div>
-<div class="text-line">	Step 2: Choose valid combination with maximum profit</div>
-<div class="text-line">	Valid combinations and profits are:</div>
-<div class="text-line">	• Item 1 → Profit = 30</div>
-<div class="text-line">	• Item 2 → Profit = 40</div>
-<div class="text-line">	• Item 3 → Profit = 35</div>
-<div class="text-line">	• Item 1 + 3 → Profit = 65</div>
-<div class="text-line">	• Item 2 + 3 → Profit = 75 ← Maximum</div>
-<div class="text-line">	• None → Profit = 0</div>
-<div class="text-line">	Result</div>
-<div class="text-line">	The optimal solution is:</div>
-<div class="text-line">	Select Item 2 and Item 3</div>
-<div class="text-line">	Total Weight = 35 (≤ 40)</div>
-<div class="text-line">	Total Profit = 75</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Example 1:</strong>  
+Operations = \( n \)  
+Complexity = \( O(n) \)</pre>
 
-        <div class="question" id="q2-3">
-            <div class="question-header">
-                <span class="question-number">9.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Find the minimum spaning tree using Prim's algorithm for the below graph.1-2=25,1-3=15,2-5=40,2-4=30,2-6=35,3-5=20,4-5=10,5-6=45.</div>
+            <div class="code-block">
+                <pre><code class="language-text">for i = 1 to n:
+    for j = 1 to n:
+        constant work</code></pre>
             </div>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">Start with vertex 1.</div>
-<div class="text-line">	Step 1</div>
-<div class="text-line">	Current tree vertices: {1}</div>
-<div class="text-line">	Available edges:</div>
-<div class="text-line">	1–2 = 25</div>
-<div class="text-line">	1–3 = 15 ← minimum</div>
-<div class="text-line">	Select 1–3 (15)</div>
-<div class="text-line">	Tree vertices: {1, 3}</div>
-<div class="text-line">	Step 2</div>
-<div class="text-line">	Available edges from the tree:</div>
-<div class="text-line">	1–2 = 25</div>
-<div class="text-line">	3–5 = 20 ← minimum</div>
-<div class="text-line">	Select 3–5 (20)</div>
-<div class="text-line">	Tree vertices: {1, 3, 5}</div>
-<div class="text-line">	Step 3</div>
-<div class="text-line">	Available edges:</div>
-<div class="text-line">	1–2 = 25</div>
-<div class="text-line">	2–5 = 40</div>
-<div class="text-line">	4–5 = 10 ← minimum</div>
-<div class="text-line">	5–6 = 45</div>
-<div class="text-line">	Select 4–5 (10)</div>
-<div class="text-line">	Tree vertices: {1, 3, 5, 4}</div>
-<div class="text-line">	Step 4</div>
-<div class="text-line">	Available edges:</div>
-<div class="text-line">	1–2 = 25 ← minimum</div>
-<div class="text-line">	2–5 = 40</div>
-<div class="text-line">	2–4 = 30</div>
-<div class="text-line">	5–6 = 45</div>
-<div class="text-line">	Select 1–2 (25)</div>
-<div class="text-line">	Tree vertices: {1, 2, 3, 4, 5}</div>
-<div class="text-line">	Step 5</div>
-<div class="text-line">	Remaining vertex: 6</div>
-<div class="text-line">	Available edges to 6:</div>
-<div class="text-line">	2–6 = 35 ← minimum</div>
-<div class="text-line">	5–6 = 45</div>
-<div class="text-line">	Select 2–6 (35)</div>
-<div class="text-line">	Tree vertices: {1, 2, 3, 4, 5, 6}</div>
-<div class="text-line">	All vertices are now included.</div>
-<div class="text-line">	Minimum Spanning Tree Edges</div>
-<div class="text-line">	1–3 = 15</div>
-<div class="text-line">	3–5 = 20</div>
-<div class="text-line">	5–4 = 10</div>
-<div class="text-line">	1–2 = 25</div>
-<div class="text-line">	2–6 = 35</div>
-<div class="text-line">	Total Minimum Cost</div>
-<div class="text-line">	Total weight = 15 + 20 + 10 + 25 + 35</div>
-<div class="text-line">	= 105</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Example 2:</strong>  
+Operations = \( n \times n = n^2 \)  
+Complexity = \( O(n^2) \)</pre>
 
-        <div class="question" id="q2-4">
-            <div class="question-header">
-                <span class="question-number">10.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Write a program to implement merge sort algorithm for sorting a list of integers in ascending order.</div>
+            <div class="code-block">
+                <pre><code class="language-text">while n &gt; 1:
+    n = n / 2</code></pre>
             </div>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">def merge_sort(arr):</div>
-<div class="text-line indent-1">	    if len(arr) > 1:</div>
-<div class="text-line indent-2">	        mid = len(arr) // 2</div>
-<div class="text-line indent-2">	        left = arr[:mid]</div>
-<div class="text-line indent-2">	        right = arr[mid:]</div>
-<div class="text-line indent-2">	        merge_sort(left)</div>
-<div class="text-line indent-2">	        merge_sort(right)</div>
-<div class="text-line indent-2">	        i = j = k = 0</div>
-<div class="text-line indent-2">	        # Merge the two halves</div>
-<div class="text-line indent-2">	        while i < len(left) and j < len(right):</div>
-<div class="text-line indent-3">	            if left[i] <= right[j]:</div>
-<div class="text-line indent-4">	                arr[k] = left[i]</div>
-<div class="text-line indent-4">	                i += 1</div>
-<div class="text-line indent-3">	            else:</div>
-<div class="text-line indent-4">	                arr[k] = right[j]</div>
-<div class="text-line indent-4">	                j += 1</div>
-<div class="text-line indent-3">	            k += 1</div>
-<div class="text-line indent-2">	        # Copy remaining elements of left[]</div>
-<div class="text-line indent-2">	        while i < len(left):</div>
-<div class="text-line indent-3">	            arr[k] = left[i]</div>
-<div class="text-line indent-3">	            i += 1</div>
-<div class="text-line indent-3">	            k += 1</div>
-<div class="text-line indent-2">	        # Copy remaining elements of right[]</div>
-<div class="text-line indent-2">	        while j < len(right):</div>
-<div class="text-line indent-3">	            arr[k] = right[j]</div>
-<div class="text-line indent-3">	            j += 1</div>
-<div class="text-line indent-3">	            k += 1</div>
-<div class="text-line">	# Driver code</div>
-<div class="text-line">	n = int(input("Enter number of elements: "))</div>
-<div class="text-line">	arr = []</div>
-<div class="text-line">	print("Enter the elements:")</div>
-<div class="text-line">	for _ in range(n):</div>
-<div class="text-line indent-1">	    arr.append(int(input()))</div>
-<div class="text-line">	merge_sort(arr)</div>
-<div class="text-line">	print("Sorted list in ascending order:")</div>
-<div class="text-line">	print(arr)</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Example 3:</strong>  
+Operations = \( \log n \)  
+Complexity = \( O(\log n) \)</pre>
+<hr class="content-hr">
+</section>
 
-        <div class="question" id="q2-5">
-            <div class="question-header">
-                <span class="question-number">11.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Explain Dijkstra's algorithm with an example.</div>
+            <section class="content-section" id="8-write-an-algorithm-for-bubble-sort-technique">
+                <h3 class="section-heading"><strong>8. Write an algorithm for bubble sort technique.</strong></h3>
+            
+<pre class="paragraph"><strong>Ans:</strong>  
+Bubble Sort is a simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed.</pre>
+<pre class="paragraph"><strong>Algorithm :</strong></pre>
+
+            <div class="code-block">
+                <pre><code class="language-text">Algorithm BubbleSort(A[0..n-1])
+// Sorts a given array by bubble sort
+// Input: An array A[0..n-1] of orderable elements
+// Output: Array A[0..n-1] sorted in non-decreasing order
+for i ← 0 to n-2 do
+    for j ← 0 to n-2-i do
+        if A[j+1] &lt; A[j]
+            // Swap A[j] and A[j+1]
+            temp ← A[j]
+            A[j] ← A[j+1]
+            A[j+1] ← temp</code></pre>
             </div>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">Dijkstra’s Algorithm is a greedy method used to find the shortest path from a single source vertex to all other vertices in a weighted, connected graph with non-negative edge weights.</div>
-<div class="text-line">	The algorithm maintains a set of vertices whose shortest distance from the source is already known, and repeatedly selects the vertex with the minimum temporary distance.</div>
-<div class="text-line">	Basic Idea</div>
-<div class="text-line">	Assign a distance value to every vertex:</div>
-<div class="text-line">	• 0 for the source vertex</div>
-<div class="text-line">	• ∞ (infinity) for all others</div>
-<div class="text-line">	Mark all vertices as unvisited.</div>
-<div class="text-line">	Select the unvisited vertex with the smallest distance value.</div>
-<div class="text-line">	Update the distance of its neighbouring vertices.</div>
-<div class="text-line">	Mark the selected vertex as visited.</div>
-<div class="text-line">	Repeat steps 3–5 until all vertices are visited.</div>
-<div class="text-line">	Notation</div>
-<div class="text-line">	dist[v] = shortest known distance from source to vertex v</div>
-<div class="text-line">	Example</div>
-<div class="text-line">	Consider the following weighted graph:</div>
-<div class="text-line">	A–B = 4</div>
-<div class="text-line">	A–C = 2</div>
-<div class="text-line">	B–C = 5</div>
-<div class="text-line">	B–D = 10</div>
-<div class="text-line">	C–E = 3</div>
-<div class="text-line">	E–D = 4</div>
-<div class="text-line">	D–F = 11</div>
-<div class="text-line">	Source vertex = A</div>
-<div class="text-line">	Step-by-Step Execution</div>
-<div class="text-line">	Initial distances:</div>
-<div class="text-line">	Vertex Distance from A</div>
-<div class="text-line">	A 0</div>
-<div class="text-line">	B ∞</div>
-<div class="text-line">	C ∞</div>
-<div class="text-line">	D ∞</div>
-<div class="text-line">	E ∞</div>
-<div class="text-line">	F ∞</div>
-<div class="text-line">	Visited set = { }</div>
-<div class="text-line">	Step 1: Select A (smallest distance = 0)</div>
-<div class="text-line">	Update neighbours:</div>
-<div class="text-line">	B = min(∞ , 0 + 4) = 4</div>
-<div class="text-line">	C = min(∞ , 0 + 2) = 2</div>
-<div class="text-line">	Visited = {A}</div>
-<div class="text-line">	Step 2: Select C (distance = 2)</div>
-<div class="text-line">	Update neighbours:</div>
-<div class="text-line">	E = min(∞ , 2 + 3) = 5</div>
-<div class="text-line">	B = min(4 , 2 + 5) = 4 (unchanged)</div>
-<div class="text-line">	Visited = {A, C}</div>
-<div class="text-line">	Step 3: Select B (distance = 4)</div>
-<div class="text-line">	Update neighbours:</div>
-<div class="text-line">	D = min(∞ , 4 + 10) = 14</div>
-<div class="text-line">	Visited = {A, C, B}</div>
-<div class="text-line">	Step 4: Select E (distance = 5)</div>
-<div class="text-line">	Update neighbours:</div>
-<div class="text-line">	D = min(14 , 5 + 4) = 9 ← updated</div>
-<div class="text-line">	Visited = {A, C, B, E}</div>
-<div class="text-line">	Step 5: Select D (distance = 9)</div>
-<div class="text-line">	Update neighbours:</div>
-<div class="text-line">	F = min(∞ , 9 + 11) = 20</div>
-<div class="text-line">	Visited = {A, C, B, E, D}</div>
-<div class="text-line">	Step 6: Select F (distance = 20)</div>
-<div class="text-line">	Visited = {A, C, B, E, D, F}</div>
-<div class="text-line">	All vertices are processed.</div>
-<div class="text-line">	Final Shortest Distances from A</div>
-<div class="text-line">	A → A = 0</div>
-<div class="text-line">	A → C = 2</div>
-<div class="text-line">	A → B = 4</div>
-<div class="text-line">	A → E = 5</div>
-<div class="text-line">	A → D = 9</div>
-<div class="text-line">	A → F = 20</div>
-<div class="text-line"><strong>	Key Points</strong></div>
-<div class="text-line">	• Works only for non-negative edge weights</div>
-<div class="text-line">	• Based on greedy strategy</div>
-<div class="text-line">	• Time complexity:</div>
-<div class="text-line">	– O(V²) using matrix</div>
-<div class="text-line">	– O((V + E) log V) using priority queue</div>
-<div class="text-line"><strong>	Conclusion</strong></div>
-<div class="text-line">	Dijkstra’s Algorithm efficiently finds the shortest path from a single source to all other vertices in a weighted graph with non negative edges by repeatedly selecting the vertex with the minimum tentative distance and updating its neighbours.</div>
-            </div>
-        </div>
-        
-        </div>
-        
-</div>
-</div>
+<hr class="content-hr">
+</section>
 
-            <div class="part" id="part-3">
-                <h2 class="part-title">PART - C</h2>
+            <section class="content-section" id="9-explain-binary-search-technique-with-example">
+                <h3 class="section-heading"><strong>9. Explain binary search technique with example.</strong></h3>
             
+<pre class="paragraph"><strong>Ans:</strong>  
+Binary Search is an efficient searching technique used on a sorted list or array. It works by repeatedly dividing the search interval into two halves, instead of scanning every element like linear search.</pre>
+<ol class="content-list"><li>Start with the first index as <strong>low</strong> and the last index as <strong>high</strong>.</li>
+<li>Find the middle position: \( \text{mid} = \frac{\text{low} + \text{high}}{2} \).</li>
+<li>Compare the middle element with the key (item to search):</li></ol>
+<ol class="content-list"><li>Repeat steps until:</li></ol>
+<pre class="paragraph"><strong>BASIC IDEA:</strong>  
+   - If <strong>key == middle element</strong> → search is successful.  
+   - If <strong>key < middle element</strong> → search in the left half (set high = mid − 1).  
+   - If <strong>key > middle element</strong> → search in the right half (set low = mid + 1).  
+   - key is found, or  
+   - low becomes greater than high (means element not found).</pre>
+<pre class="paragraph"><strong>CONDITION:</strong>  
+The list <strong>MUST</strong> be sorted before performing binary search.</pre>
+<pre class="paragraph"><strong>TIME COMPLEXITY:</strong>  
+\( O(\log n) \)  
+Because the list size is reduced to half in every step.</pre>
+<hr class="content-hr">
+<pre class="paragraph"><strong>EXAMPLE:</strong>  
+Suppose the sorted array is:  
+\( A = [3, 8, 15, 20, 25, 30, 45] \)  
+We want to search for key = 25</pre>
+<pre class="paragraph"><strong>Step 1:</strong>  
+low = 0, high = 6  
+mid = \( (0 + 6) / 2 = 3 \)  
+A[mid] = A[3] = 20  
+25 > 20 → search in right half</pre>
+<pre class="paragraph"><strong>Step 2:</strong>  
+low = 4, high = 6  
+mid = \( (4 + 6) / 2 = 5 \)  
+A[mid] = A[5] = 30  
+25 < 30 → search in left half</pre>
+<pre class="paragraph"><strong>Step 3:</strong>  
+low = 4, high = 4  
+mid = \( (4 + 4) / 2 = 4 \)  
+A[mid] = A[4] = 25  
+Key found at index 4</pre>
+<pre class="paragraph">So, the element 25 is successfully found.</pre>
+<pre class="paragraph"><strong>WHEN ELEMENT IS NOT FOUND:</strong>  
+If low becomes greater than high, then element does not exist in the list.</pre>
+<hr class="content-hr">
+</section>
 
-                <div class="part-description">
-                    Answer any three questions. Each question caries 10 marks : (3 x 10 = 30)
-                </div>
-                
-<div class="questions">
-
-        <div class="question" id="q3-1">
-            <div class="question-header">
-                <span class="question-number">12.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Explain asymptotic notations.</div>
-            </div>
+            <section class="content-section" id="10-discuss-knapsack-problem-with-example">
+                <h3 class="section-heading"><strong>10. Discuss Knapsack problem with example.</strong></h3>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">Asymptotic notations are mathematical tools used to describe the growth rate of the running time or space requirement of an algorithm as the input size n becomes very	 large. They help us compare the efficiency of algorithms independent of machine and implementation details.</div>
-<div class="text-line">	The three main asymptotic notations are:</div>
-<div class="text-line">	Big–Oh Notation — O(f(n))</div>
-<div class="text-line">	Big-Oh gives an asymptotic upper bound on the running time of an algorithm.</div>
-<div class="text-line">	It represents the worst-case growth rate.</div>
-<div class="text-line">	Formally,</div>
-<div class="text-line">	T(n) = O(f(n))</div>
-<div class="text-line">	if there exist constants c > 0 and n₀ such that</div>
-<div class="text-line">	T(n) ≤ c · f(n) for all n ≥ n₀.</div>
-<div class="text-line"><strong>	Example:</strong></div>
-<div class="text-line">	If T(n) = 3n² + 5n + 2, then</div>
-<div class="text-line">	T(n) = O(n²)</div>
-<div class="text-line">	Big–Omega Notation — Ω(f(n))</div>
-<div class="text-line">	Big-Omega gives an asymptotic lower bound on the running time.</div>
-<div class="text-line">	It represents the best-case growth rate.</div>
-<div class="text-line">	Formally,</div>
-<div class="text-line">	T(n) = Ω(f(n))</div>
-<div class="text-line">	if there exist constants c > 0 and n₀ such that</div>
-<div class="text-line">	T(n) ≥ c · f(n) for all n ≥ n₀.</div>
-<div class="text-line"><strong>	Example:</strong></div>
-<div class="text-line">	T(n) = 3n² + 5n + 2</div>
-<div class="text-line">	⇒ T(n) = Ω(n²)</div>
-<div class="text-line">	Big–Theta Notation — Θ(f(n))</div>
-<div class="text-line">	Big-Theta provides a tight bound.</div>
-<div class="text-line">	It represents the exact asymptotic growth rate.</div>
-<div class="text-line">	Formally,</div>
-<div class="text-line">	T(n) = Θ(f(n))</div>
-<div class="text-line">	if it is both O(f(n)) and Ω(f(n)).</div>
-<div class="text-line"><strong>	Example:</strong></div>
-<div class="text-line">	T(n) = 3n² + 5n + 2</div>
-<div class="text-line">	⇒ T(n) = Θ(n²)</div>
-<div class="text-line">	Why Asymptotic Notations are Used</div>
-<div class="text-line">	• To analyze algorithm performance for large input sizes</div>
-<div class="text-line">	• To ignore machine-dependent constants</div>
-<div class="text-line">	• To compare algorithms mathematically</div>
-<div class="text-line">	Common Growth Orders (fastest to slowest)</div>
-<div class="text-line">	O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!)</div>
-<div class="text-line"><strong>	Conclusion</strong></div>
-<div class="text-line">	Asymptotic notations describe the running time of algorithms in terms of input size n and help evaluate efficiency.Big-Oh gives the upper bound, Big-Omega gives the lower bound, and Big-Theta gives the tight bound.</div>
-<div class="text-line">13.Explain lower bound arguments.List and explain methods to obtain .</div>
-<div class="text-line"> Ans: A lower bound of a problem is the best possible (minimum) running time that any algorithm can ever achieve for solving that problem in the worst case.</div>
-<div class="text-line">	It is a theoretical limit on performance — no algorithm can do better than this bound.</div>
-<div class="text-line">	If the lower bound of a problem is f(n), then every algorithm that solves this problem must take at least f(n) time in the worst case.</div>
-<div class="text-line">	Examples</div>
-<div class="text-line">	• Comparison-based sorting has a lower bound of Ω(n log n)</div>
-<div class="text-line">	• Searching in an unsorted array has a lower bound of Ω(n)</div>
-<div class="text-line">	So, lower bound arguments help us decide whether an algorithm is optimal.</div>
-<div class="text-line">	If an algorithm matches the lower bound, it is called asymptotically optimal.</div>
-<div class="text-line">	Methods to Obtain Lower Bounds</div>
-<div class="text-line">	There are mainly three commonly used methods:</div>
-<div class="text-line">	Direct Counting Argument</div>
-<div class="text-line">	In this method, we directly count the minimum number of operations required to solve a problem.</div>
-<div class="text-line"><strong>	Example:</strong></div>
-<div class="text-line">	To search in an unsorted list of n elements, at least n comparisons may be required in the worst case.</div>
-<div class="text-line">	Therefore, the lower bound is:</div>
-<div class="text-line">	Ω(n)</div>
-<div class="text-line">	This method is simple and usually applies to straightforward problems.</div>
-<div class="text-line">	Decision Tree Method</div>
-<div class="text-line">	This method is used mainly for comparison-based algorithms such as sorting and searching.</div>
-<div class="text-line"><strong>	Idea:</strong></div>
-<div class="text-line">	Every comparison made by the algorithm is represented as a decision (yes/no) node in a binary tree.</div>
-<div class="text-line">	The height of the tree represents the minimum number of comparisons in the worst case.</div>
-<div class="text-line">	For comparison-based sorting of n elements:</div>
-<div class="text-line">	• Total possible permutations = n!</div>
-<div class="text-line">	• A binary decision tree with height h can distinguish at most 2^h outcomes</div>
-<div class="text-line">	So,</div>
-<div class="text-line">	2^h ≥ n!</div>
-<div class="text-line">	Taking log,</div>
-<div class="text-line">	h ≥ log₂(n!)</div>
-<div class="text-line">	Using Stirling’s approximation:</div>
-<div class="text-line">	log₂(n!) = Ω(n log n)</div>
-<div class="text-line">	So the lower bound of comparison-based sorting is:</div>
-<div class="text-line">	Ω(n log n)</div>
-<div class="text-line">	Adversary (or Game-Theoretic) Method</div>
-<div class="text-line">	In this method, we assume an adversary (opponent) who answers the algorithm’s questions in such a way that the algorithm is forced to do the maximum possible work.</div>
-<div class="text-line">	The adversary guarantees that no algorithm can solve the problem faster than a certain limit.</div>
-<div class="text-line">	This helps derive tight worst-case lower bounds.</div>
-<div class="text-line"><strong>	Example:</strong></div>
-<div class="text-line">	In searching, the adversary can always pretend the key is not found until the last element is checked, forcing Ω(n) comparisons.</div>
-<div class="text-line"><strong>	Conclusion</strong></div>
-<div class="text-line">	Lower bound arguments help determine the minimum possible time complexity of a problem irrespective of the algorithm used.</div>
-<div class="text-line">	The main methods to obtain lower bounds are:</div>
-<div class="text-line">	• Direct Counting</div>
-<div class="text-line">	• Decision Tree Method</div>
-<div class="text-line">	• Adversary Method</div>
-<div class="text-line">	They are fundamental in theoretical computer science for proving whether an algorithm is optimal.</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Ans:</strong>  
+The Knapsack Problem is a fundamental optimization problem in the study of algorithms. It deals with selecting items to place into a knapsack (bag) with a limited carrying capacity, such that the total profit (or value) of the selected items is maximized without exceeding the weight capacity of the knapsack.</pre>
+<ul class="content-list"><li>A knapsack of maximum capacity \( W \)</li>
+<li>A set of \( n \) items</li>
+<li>Each item \( i \) has</li></ul>
+<pre class="paragraph">We are given:  
+  weight = \( w_i \)  
+  profit/value = \( p_i \)</pre>
+<ul class="content-list"><li>Total weight ≤ \( W \)</li>
+<li>Total profit is maximum</li></ul>
+<pre class="paragraph">The objective is to select items so that:</pre>
+<hr class="content-hr">
+<ol class="content-list"><li><strong>0/1 Knapsack Problem</strong></li></ol>
+<pre class="paragraph"><strong>Types of Knapsack Problem:</strong>  
+   In this version, each item can either be selected completely (1) or not selected at all (0). Partial selection of items is not allowed. This problem is generally solved using Dynamic Programming or Branch and Bound techniques.</pre>
+<ol class="content-list"><li><strong>Fractional Knapsack Problem</strong></li></ol>
+<pre class="paragraph">In this version, fractions of items can be selected. This problem is solved using the Greedy method by selecting items in decreasing order of profit-to-weight ratio.</pre>
+<hr class="content-hr">
+<pre class="paragraph"><strong>Example of 0/1 Knapsack Problem:</strong></pre>
+<pre class="paragraph">Knapsack capacity: \( W = 50 \)  
+Items available:</pre>
+<pre class="paragraph">| Item | Weight | Profit |
+|------|--------|--------|
+| 1    | 10     | 60     |
+| 2    | 20     | 100    |
+| 3    | 30     | 120    |</pre>
+<pre class="paragraph">We check valid combinations:</pre>
+<pre class="paragraph"><strong>Case 1:</strong>  
+Select item 1 and item 2  
+Total weight = 10 + 20 = 30  
+Total profit = 60 + 100 = 160</pre>
+<pre class="paragraph"><strong>Case 2:</strong>  
+Select item 2 and item 3  
+Total weight = 20 + 30 = 50  
+Total profit = 100 + 120 = 220 ← Maximum profit</pre>
+<pre class="paragraph"><strong>Case 3:</strong>  
+Select item 1 and item 3  
+Total weight = 10 + 30 = 40  
+Total profit = 60 + 120 = 180</pre>
+<pre class="paragraph"><strong>Case 4:</strong>  
+Selecting all items is not allowed  
+Total weight = 60 > 50</pre>
+<pre class="paragraph">Therefore, the optimal solution is to select Item 2 and Item 3.  
+Maximum profit = 220  
+Total weight = 50</pre>
+<hr class="content-hr">
+</section>
 
-        <div class="question" id="q3-2">
-            <div class="question-header">
-                <span class="question-number">14.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Define tree. explain binary tree traversals.</div>
-            </div>
+            <section class="content-section" id="11-write-a-short-note-on-np-problem">
+                <h3 class="section-heading"><strong>11. Write a short note on NP-problem.</strong></h3>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">A tree is a non-linear hierarchical data structure consisting of a set of nodes connected by edges.</div>
-<div class="text-line">	It has the following properties:</div>
-<div class="text-line">	• There is one special node called the root</div>
-<div class="text-line">	• Every node (except root) has exactly one parent</div>
-<div class="text-line">	• Nodes having no children are called leaf nodes</div>
-<div class="text-line">	• There are no cycles in a tree</div>
-<div class="text-line">	A tree is widely used to represent hierarchical structures such as file systems, organization charts, etc.</div>
-<div class="text-line">	Binary Tree</div>
-<div class="text-line">	A binary tree is a tree in which each node has at most two children, usually referred to as:</div>
-<div class="text-line">	• Left child</div>
-<div class="text-line">	• Right child</div>
-<div class="text-line">	Binary Tree Traversals</div>
-<div class="text-line">	Traversal means visiting all the nodes of a binary tree in a specific order.</div>
-<div class="text-line">	The main traversal methods are:</div>
-<div class="text-line">	Inorder Traversal (Left – Root – Right)</div>
-<div class="text-line"><strong>	Steps:</strong></div>
-<div class="text-line">	Traverse the left subtree</div>
-<div class="text-line">	Visit the root node</div>
-<div class="text-line">	Traverse the right subtree</div>
-<div class="text-line">	For a Binary Search Tree, inorder traversal gives sorted order of elements.</div>
-<div class="text-line">	Example order:</div>
-<div class="text-line">	Left → Root → Right</div>
-<div class="text-line">	Preorder Traversal (Root – Left – Right)</div>
-<div class="text-line"><strong>	Steps:</strong></div>
-<div class="text-line">	Visit the root node</div>
-<div class="text-line">	Traverse the left subtree</div>
-<div class="text-line">	Traverse the right subtree</div>
-<div class="text-line">	Used for:</div>
-<div class="text-line">	• Creating copy of tree</div>
-<div class="text-line">	• Prefix notation of expressions</div>
-<div class="text-line">	Example order:</div>
-<div class="text-line">	Root → Left → Right</div>
-<div class="text-line">	Postorder Traversal (Left – Right – Root)</div>
-<div class="text-line"><strong>	Steps:</strong></div>
-<div class="text-line">	Traverse the left subtree</div>
-<div class="text-line">	Traverse the right subtree</div>
-<div class="text-line">	Visit the root node</div>
-<div class="text-line">	Used for:</div>
-<div class="text-line">	• Deleting/freeing tree nodes</div>
-<div class="text-line">	• Postfix expression evaluation</div>
-<div class="text-line">	Example order:</div>
-<div class="text-line">	Left → Right → Root</div>
-<div class="text-line"><strong>	Conclusion</strong></div>
-<div class="text-line">	A tree is a hierarchical structure with nodes connected without cycles.</div>
-<div class="text-line">	Binary tree traversal methods (Inorder, Preorder, Postorder) provide systematic ways to visit every node in a binary tree.</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Ans:</strong>  
+NP stands for <strong>“Nondeterministic Polynomial time”</strong>.  
+An NP problem is a decision problem for which a given solution can be verified in polynomial time by a deterministic Turing machine.</pre>
+<pre class="paragraph">In other words, if someone gives a proposed answer to the problem, we can check (verify) whether it is correct in polynomial time, even if we do not know how to find that answer efficiently.</pre>
+<pre class="paragraph"><strong>Formally:</strong>  
+NP = the class of problems whose solutions are verifiable in polynomial time.</pre>
+<ul class="content-list"><li><strong>P:</strong> Problems that can be solved in polynomial time.</li>
+<li><strong>NP:</strong> Problems whose solutions can be verified in polynomial time.</li></ul>
+<pre class="paragraph"><strong>Important related classes:</strong></pre>
+<pre class="paragraph"><strong>Relationship:</strong>  
+Every problem in P is also in NP, but it is still unknown whether \( P = NP \).</pre>
+<pre class="paragraph"><strong>NP-Complete problems:</strong>  
+These are the “hardest” problems in NP. If any NP-Complete problem can be solved in polynomial time, then every NP problem can be solved in polynomial time.</pre>
+<ul class="content-list"><li>0/1 Knapsack problem</li>
+<li>Travelling Salesman problem (decision version)</li>
+<li>Hamiltonian Cycle problem</li>
+<li>Graph Coloring problem</li></ul>
+<pre class="paragraph"><strong>Examples of NP-Complete problems:</strong></pre>
+<pre class="paragraph"><strong>NP-Hard problems:</strong>  
+These are at least as hard as NP-Complete problems, but they may not belong to NP (their solutions may not even be verifiable in polynomial time).</pre>
+<hr class="content-hr">
+</section>
 
-        <div class="question" id="q3-3">
-            <div class="question-header">
-                <span class="question-number">15.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Write short note on :     a) Depth first search.</div>
+            <section class="content-section" id="part-c">
+                <h2 class="section-heading"><strong>PART - C</strong></h2>
+            
+<pre class="paragraph"><strong>Answer any three of the following each carries ten marks : (3 × 10 = 30)</strong></pre>
+<hr class="content-hr">
+</section>
+
+            <section class="content-section" id="12-a-explain-worst-case-best-case-and-average-case-efficiency">
+                <h3 class="section-heading"><strong>12. a) Explain worst-case, best-case and average-case efficiency.</strong></h3>
+            
+<pre class="paragraph"><strong>Ans:</strong>  
+When analysing an algorithm, we measure how much time or space it uses for different kinds of inputs of the same size \( n \). This leads to three types of efficiency:</pre>
+<pre class="paragraph"><strong>Best-case efficiency</strong>  
+This represents the minimum time (or space) taken by the algorithm for any input of size \( n \). It describes the “fastest possible” performance of the algorithm.</pre>
+<pre class="paragraph"><strong>Example:</strong>  
+In linear search, if the first element is the key, the best-case time is \( O(1) \).</pre>
+<pre class="paragraph"><strong>Worst-case efficiency</strong>  
+This represents the maximum time (or space) taken by the algorithm for any input of size \( n \). It describes the “slowest possible” performance and guarantees an upper bound.</pre>
+<pre class="paragraph"><strong>Example:</strong>  
+In linear search, if the key is not present or is the last element, the worst-case time is \( O(n) \).</pre>
+<pre class="paragraph"><strong>Average-case efficiency</strong>  
+This represents the expected time (or space) taken by the algorithm over all possible inputs of size \( n \), assuming each input is equally likely. It gives a more realistic measure of performance.</pre>
+<pre class="paragraph"><strong>Example:</strong>  
+In linear search, assuming the key is equally likely to be anywhere, the average-case time is \( O(n) \).</pre>
+<ul class="content-list"><li>Best-case shows the minimum effort</li>
+<li>Worst-case gives the guaranteed upper bound</li>
+<li>Average-case gives expected practical behaviour</li></ul>
+<pre class="paragraph"><strong>Conclusion:</strong></pre>
+<hr class="content-hr">
+</section>
+
+            <section class="content-section" id="12-b-compare-iterative-method-with-recursive-method">
+                <h3 class="section-heading"><strong>12. b) Compare iterative method with recursive method.</strong></h3>
+            
+<pre class="paragraph"><strong>Ans:</strong>  
+Iteration and recursion are two different approaches used to repeat a set of instructions in an algorithm or program.</pre>
+<pre class="paragraph"><strong>Difference between Iteration and Recursion:</strong></pre>
+<pre class="paragraph">| Aspect               | Iteration                                                                 | Recursion                                                                 |
+|----------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| <strong>Definition</strong>       | A process of repeatedly executing statements using looping constructs.    | A process in which a function calls itself directly or indirectly.        |
+| <strong>Termination</strong>      | Terminates when the loop condition becomes false.                         | Terminates when a base (stopping) condition is reached.                   |
+| <strong>Memory Usage</strong>     | Uses constant memory because variables are reused.                        | Uses more memory due to function call stack storage.                      |
+| <strong>Performance</strong>      | Generally faster and more efficient.                                      | Slower due to function call overhead and stack usage.                     |
+| <strong>Code Simplicity</strong>  | Code may be longer but more efficient.                                    | Code is often shorter and easier to understand for problems like trees.   |
+| <strong>Risk of Error</strong>    | No risk of stack overflow.                                                | Risk of stack overflow if base condition is missing or recursion is deep. |
+| <strong>Example Problems</strong> | Loops, counting, searching, sorting.                                      | Factorial, Fibonacci, Tower of Hanoi, tree/graph traversal.               |</pre>
+<hr class="content-hr">
+</section>
+
+            <section class="content-section" id="13-a-explain-selection-sort-technique-using-brute-force-method">
+                <h3 class="section-heading"><strong>13. a) Explain selection sort technique using Brute force method.</strong></h3>
+            
+<pre class="paragraph"><strong>Ans:</strong>  
+Selection Sort is a simple comparison–based sorting technique that follows the Brute Force method.  
+In this method, the list is divided into two parts: the sorted part (initially empty) and the unsorted part. The algorithm repeatedly selects the smallest element from the unsorted part and places it in its correct position in the sorted part.</pre>
+<ol class="content-list"><li>Assume the element at position \( i \) is the smallest.</li>
+<li>Compare it with every element in the unsorted portion of the list.</li>
+<li>If a smaller element is found, update the position of the smallest element.</li>
+<li>After checking all elements, swap the smallest element with the element at position \( i \).</li>
+<li>Repeat the same process for the remaining unsorted elements.</li></ol>
+<pre class="paragraph"><strong>Working Principle:</strong>  
+For each position \( i \) in the list (from first to last − 1):</pre>
+<pre class="paragraph">This is called a Brute Force approach because it simply tries all possibilities by comparing every pair in the unsorted part until the smallest is found.</pre>
+<hr class="content-hr">
+<pre class="paragraph"><strong>Example:</strong>  
+Consider the list: \( [25, 10, 35, 15, 5] \)</pre>
+<pre class="paragraph"><strong>Pass 1:</strong>  
+Smallest element = 5  
+Swap 5 with 25  
+List becomes: \( [5, 10, 35, 15, 25] \)</pre>
+<pre class="paragraph"><strong>Pass 2:</strong>  
+Remaining list: \( [10, 35, 15, 25] \)  
+Smallest = 10  
+Already in correct position  
+List remains: \( [5, 10, 35, 15, 25] \)</pre>
+<pre class="paragraph"><strong>Pass 3:</strong>  
+Remaining list: \( [35, 15, 25] \)  
+Smallest = 15  
+Swap 15 with 35  
+List becomes: \( [5, 10, 15, 35, 25] \)</pre>
+<pre class="paragraph"><strong>Pass 4:</strong>  
+Remaining list: \( [35, 25] \)  
+Smallest = 25  
+Swap 25 with 35  
+List becomes: \( [5, 10, 15, 25, 35] \)</pre>
+<pre class="paragraph">Now the list is sorted.</pre>
+<pre class="paragraph"><strong>Time Complexity:</strong>  
+Best case: \( O(n^2) \)  
+Worst case: \( O(n^2) \)  
+Average case: \( O(n^2) \)</pre>
+<pre class="paragraph"><strong>Space Complexity:</strong> \( O(1) \)</pre>
+<ul class="content-list"><li>Simple and easy to understand</li>
+<li>Works well for small datasets</li>
+<li>Not suitable for large datasets</li>
+<li>Number of comparisons is fixed</li>
+<li>Performs at most \( (n − 1) \) swaps</li></ul>
+<pre class="paragraph"><strong>Characteristics:</strong></pre>
+<pre class="paragraph"><strong>Conclusion:</strong>  
+Selection Sort is a Brute Force sorting method that repeatedly selects the smallest element from the unsorted list and places it in its correct position. Although easy to implement, it is inefficient for large inputs due to its \( O(n^2) \) time complexity.</pre>
+<hr class="content-hr">
+</section>
+
+            <section class="content-section" id="13-b-write-an-algorithm-for-sequential-search">
+                <h3 class="section-heading"><strong>13. b) Write an algorithm for sequential search.</strong></h3>
+            
+<pre class="paragraph"><strong>Ans:</strong>  
+Also known as <strong>Linear Search</strong>, it scans each element of a list sequentially until the target element is found or the list ends.</pre>
+<pre class="paragraph"><strong>Algorithm (Step-by-Step):</strong></pre>
+
+            <div class="code-block">
+                <pre><code class="language-text">Algorithm SequentialSearch(A[0..n-1], K)
+// Searches for a given value in a given array
+// Input: An array A[0..n-1] and a search key K
+// Output: Index of the first element equal to K, or -1 if not found
+i ← 0
+while i &lt; n and A[i] ≠ K do
+    i ← i + 1
+if i &lt; n return i
+else return -1</code></pre>
             </div>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">Depth First Search (DFS) is a graph traversal technique used to visit all the vertices of a graph.</div>
-<div class="text-line">	It starts from a selected source vertex and explores as far as possible along each branch before backtracking.</div>
-<div class="text-line">	DFS uses a stack data structure, either explicitly or through recursion.</div>
-<div class="text-line">	Working Principle</div>
-<div class="text-line">	Visit the starting vertex and mark it as visited.</div>
-<div class="text-line">	Move to any unvisited adjacent vertex and repeat the process.</div>
-<div class="text-line">	If no adjacent unvisited vertex exists, backtrack to the previous vertex.</div>
-<div class="text-line">	Continue until all vertices reachable from the source are visited.</div>
-<div class="text-line">	Implementation</div>
-<div class="text-line">	• Recursive method → uses system call stack</div>
-<div class="text-line">	• Iterative method → uses an explicit stack</div>
-<div class="text-line">	Applications of DFS</div>
-<div class="text-line">	• Detecting cycles in graphs</div>
-<div class="text-line">	• Topological sorting</div>
-<div class="text-line">	• Finding connected components</div>
-<div class="text-line">	• Solving puzzles like mazes</div>
-<div class="text-line">	• Path finding</div>
-<div class="text-line">	• Tree traversals (Preorder/Postorder)</div>
-<div class="text-line">	Time Complexity</div>
-<div class="text-line">	O(V + E),</div>
-<div class="text-line">	where V = number of vertices and E = number of edges.</div>
-<div class="text-line">	Key Features</div>
-<div class="text-line">	• Goes deep before exploring siblings</div>
-<div class="text-line">	• Uses stack / recursion</div>
-<div class="text-line">	• Suitable for problems involving backtracking</div>
-            </div>
-        </div>
-        
-        </div>
-        
+<pre class="paragraph"><strong>Enhanced Version (with Sentinel):</strong></pre>
 
-        <div class="question" id="q3-4">
-            <div class="question-header">
-                <span class="question-number">15.</span>
-                
-            </div>
-            <div class="question-text">
-                <div class="text-line">Write short note on :     b)Decision trees.</div>
+            <div class="code-block">
+                <pre><code class="language-text">Algorithm SequentialSearchWithSentinel(A[0..n], K)
+// Uses A[n] as sentinel
+A[n] ← K  // Add sentinel
+i ← 0
+while A[i] ≠ K do
+    i ← i + 1
+if i &lt; n return i
+else return -1</code></pre>
             </div>
             
-        <div class="answer">
-            <div class="answer-label">Ans:</div>
-            <div class="answer-text">
-                <div class="text-line">A Decision Tree is a tree-shaped model used to represent a sequence of decisions or comparisons for solving a problem. Each internal  node represents a decision or test condition, each edge represents the outcome of the test, and each leaf node represents a final result or solution.</div>
-<div class="text-line">	In algorithm analysis, decision trees are mainly used to obtain lower bounds for comparison-based algorithms such as sorting and searching.</div>
-<div class="text-line">	Decision Tree for Algorithms</div>
-<div class="text-line">	• Each comparison made by the algorithm is modeled as a binary decision node (Yes/No).</div>
-<div class="text-line">	• Each input leads to a path from the root to a leaf.</div>
-<div class="text-line">	• The height of the tree represents the minimum number of comparisons in the worst case.</div>
-<div class="text-line">	For comparison-based sorting of n elements:</div>
-<div class="text-line">	Number of possible permutations = n!</div>
-<div class="text-line">	A binary tree of height h can distinguish at most 2^h outcomes</div>
-<div class="text-line">	Therefore,</div>
-<div class="text-line">	2^h ≥ n!</div>
-<div class="text-line">	⇒ h ≥ log₂(n!)</div>
-<div class="text-line">	⇒ Worst-case lower bound = Ω(n log n)</div>
-<div class="text-line">	So, no comparison-based sorting algorithm can perform better than n log n in the worst case.</div>
-<div class="text-line">	Applications</div>
-<div class="text-line">	• Proving lower bounds of algorithms</div>
-<div class="text-line">	• Designing optimal decision processes</div>
-<div class="text-line">	• Machine learning classification models</div>
-<div class="text-line">	• Game trees and strategy analysis</div>
-<div class="text-line"><strong>	Conclusion</strong></div>
-<div class="text-line">	Decision Trees provide a theoretical framework to analyze and prove limits on algorithm performance, especially for comparison-based problems. They show the minimum number of decisions required to distinguish between all possible inputs.</div>
-<div class="text-line">--------------------------------------------------</div>
-            </div>
-        </div>
-        
-        </div>
-        
-</div>
-</div>
+<ol class="content-list"><li>Start from the first element.</li>
+<li>Compare each element with the search key \( K \).</li>
+<li>If found, return the index.</li>
+<li>If end of array is reached without finding, return -1.</li>
+<li>Sentinel version eliminates the boundary check in the loop.</li></ol>
+<pre class="paragraph"><strong>Explanation of the Algorithm:</strong></pre>
+<pre class="paragraph"><strong>Example Problem with Working Steps:</strong>  
+Problem: Search for key = 22 in array \( [11, 25, 12, 22, 64] \)</pre>
+<ul class="content-list"><li>i=0: A[0]=11 ≠ 22 → continue</li>
+<li>i=1: A[1]=25 ≠ 22 → continue</li>
+<li>i=2: A[2]=12 ≠ 22 → continue</li>
+<li>i=3: A[3]=22 = 22 → found!</li></ul>
+<pre class="paragraph"><strong>Steps:</strong>  
+Return index 3</pre>
+<ul class="content-list"><li>Best Case: \( O(1) \) - Key found at first position</li>
+<li>Average Case: \( \Theta(n) \) - Key found roughly in the middle</li>
+<li>Worst Case: \( O(n) \) - Key not present or at last position</li></ul>
+<pre class="paragraph"><strong>Time Complexity:</strong></pre>
+<pre class="paragraph"><strong>Space Complexity:</strong> \( O(1) \)</pre>
+<ul class="content-list"><li>Simple and straightforward</li>
+<li>Works on both sorted and unsorted arrays</li>
+<li>No preprocessing required</li>
+<li>Inefficient for large datasets</li></ul>
+<pre class="paragraph"><strong>Characteristics:</strong></pre>
+<ul class="content-list"><li>Searching small lists</li>
+<li>When data is unsorted</li>
+<li>Simple database queries on small tables</li></ul>
+<pre class="paragraph"><strong>Real-world Usage Examples:</strong></pre>
+<hr class="content-hr">
+</section>
+
+            <section class="content-section" id="14-explain-merge-sort-technique-and-find-the-time-complexity">
+                <h3 class="section-heading"><strong>14. Explain merge sort technique and find the time complexity.</strong></h3>
+            
+<pre class="paragraph"><strong>Ans:</strong>  
+Merge Sort is a divide-and-conquer sorting technique. It works by dividing the list into smaller sublists, sorting them, and then merging the sorted sublists to produce the final sorted list.</pre>
+<pre class="paragraph"><strong>Working Principle:</strong>  
+Merge Sort follows three main steps:</pre>
+<ol class="content-list"><li><strong>Divide</strong></li></ol>
+<pre class="paragraph">- Split the given list into two equal (or nearly equal) halves.  
+   - Continue dividing each half until each sublist contains only one element.</pre>
+<ol class="content-list"><li><strong>Conquer</strong></li></ol>
+<pre class="paragraph">- Sort the smaller sublists (a single element is already sorted).</pre>
+<ol class="content-list"><li><strong>Combine (Merge)</strong></li></ol>
+<pre class="paragraph">- Merge two sorted sublists into one sorted list by comparing elements one-by-one and arranging them in order.  
+   - Continue merging until the full list is sorted.</pre>
+<hr class="content-hr">
+<pre class="paragraph"><strong>Example:</strong>  
+Consider the list: \( [38, 27, 43, 3, 9, 82, 10] \)</pre>
+<pre class="paragraph"><strong>Step 1: Divide repeatedly</strong>  
+\( [38, 27, 43, 3, 9, 82, 10] \)  
+→ \( [38, 27, 43, 3] \) and \( [9, 82, 10] \)  
+→ \( [38, 27] \) \( [43, 3] \) \( [9, 82] \) \( [10] \)  
+→ \( [38] \) \( [27] \) \( [43] \) \( [3] \) \( [9] \) \( [82] \) \( [10] \)</pre>
+<pre class="paragraph"><strong>Step 2: Merge sorted parts</strong>  
+\( [27, 38] \) \( [3, 43] \) \( [9, 82] \) \( [10] \)</pre>
+<pre class="paragraph"><strong>Step 3: Merge again</strong>  
+\( [3, 27, 38, 43] \) \( [9, 10, 82] \)</pre>
+<pre class="paragraph"><strong>Step 4: Final merge</strong>  
+\( [3, 9, 10, 27, 38, 43, 82] \)</pre>
+<pre class="paragraph">So the list is now sorted.</pre>
+<hr class="content-hr">
+<pre class="paragraph"><strong>Time Complexity:</strong>  
+At every level, the list is divided into two halves, and merging takes linear time.  
+Number of levels = \( \log_2 n \)  
+Work done per level = \( n \)</pre>
+<pre class="paragraph">Therefore,  
+Time Complexity = \( n \log_2 n \)</pre>
+<ul class="content-list"><li>Best case: \( O(n \log n) \)</li>
+<li>Average case: \( O(n \log n) \)</li>
+<li>Worst case: \( O(n \log n) \)</li></ul>
+<pre class="paragraph">So:</pre>
+<pre class="paragraph"><strong>Space Complexity:</strong>  
+\( O(n) \) extra space is required for merging.</pre>
+<pre class="paragraph"><strong>Conclusion:</strong>  
+Merge Sort is an efficient, stable, divide-and-conquer sorting algorithm with a guaranteed time complexity of \( O(n \log n) \). However, it requires additional memory for merging, which makes it less suitable for memory-restricted systems.</pre>
+<hr class="content-hr">
+</section>
+
+            <section class="content-section" id="15-write-kruskals-algorithm">
+                <h3 class="section-heading"><strong>15. Write Kruskal's algorithm.</strong></h3>
+            
+<pre class="paragraph"><strong>Ans:</strong>  
+Kruskal’s Algorithm is a greedy technique used to find a Minimum Spanning Tree (MST) of a connected, weighted graph. It selects edges in increasing order of weight such that no cycle is formed.</pre>
+<pre class="paragraph"><strong>Algorithm: Kruskal’s Algorithm</strong></pre>
+<pre class="paragraph"><strong>Input:</strong> A connected weighted graph \( G(V, E) \)  
+<strong>Output:</strong> A Minimum Spanning Tree (MST)</pre>
+<pre class="paragraph"><strong>Step 1:</strong> Sort all edges in the graph in non-decreasing order of their weights.  
+<strong>Step 2:</strong> Initialize the MST as empty.  
+<strong>Step 3:</strong> Repeat Steps 4 and 5 until MST contains \( (V − 1) \) edges:  
+    <strong>Step 4:</strong> Select the next edge with the smallest weight from the sorted list.  
+    <strong>Step 5:</strong> If adding this edge does NOT form a cycle with the edges already in the MST, add it to the MST. Otherwise discard the edge.  
+<strong>Step 6:</strong> Stop.  
+<em>(Use a Disjoint Set / Union-Find structure to check cycles efficiently.)</em></pre>
+<ul class="content-list"><li>Works on connected weighted graphs</li>
+<li>Based on Greedy method</li>
+<li>Produces a Minimum Spanning Tree</li>
+<li>Time Complexity: \( O(E \log E) \) or \( O(E \log V) \)</li></ul>
+<pre class="paragraph"><strong>Properties:</strong></pre>
+<pre class="paragraph"><strong>Conclusion:</strong>  
+Kruskal’s Algorithm builds the MST by repeatedly selecting the smallest-weight edge that does not form a cycle until the spanning tree contains \( (V − 1) \) edges.</pre>
+<hr class="content-hr">
+</section>
         </main>
         
-        <footer class="footer">
+        <footer class="document-footer">
             <div class="footer-content">
-                <p>Generated on January 01, 2026 • 3 parts • 15 questions</p>
+                <pre>Document generated on January 02, 2026 at 18:46</pre>
+                <pre class="document-stats">4 sections • 6 code blocks</pre>
             </div>
         </footer>
         
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script>
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Copy code blocks
+        document.querySelectorAll('pre code').forEach(codeBlock => {
+            const copyButton = document.createElement('button');
+            copyButton.className = 'copy-button';
+            copyButton.innerHTML = '📋 Copy';
+            copyButton.title = 'Copy to clipboard';
+            
+            const pre = codeBlock.parentNode;
+            pre.style.position = 'relative';
+            pre.insertBefore(copyButton, codeBlock);
+            
+            copyButton.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(codeBlock.textContent);
+                    copyButton.innerHTML = '✓ Copied!';
+                    copyButton.classList.add('copied');
+                    setTimeout(() => {
+                        copyButton.innerHTML = '📋 Copy';
+                        copyButton.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy: ', err);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

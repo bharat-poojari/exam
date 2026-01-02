@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DESIGN AND ANALYSIS OF ALGORITHM</title>
+    <title>DAA Notes</title>
     <style>
         /* ============================================================================
    ELEGANT CSS FOR ACADEMIC MARKDOWN CONVERTER
@@ -801,8 +801,7 @@ h5.section-heading, h6.section-heading {
     <div class="container">
         
         <header class="document-header">
-            <h1 class="document-title">DESIGN AND ANALYSIS OF ALGORITHM</h1>
-            <div class="document-meta"><div class="meta-item"><strong>Unit:</strong> **Unit 1: Introduction to Design and Analysis of Algorithms**</div></div>
+            <h1 class="document-title">DAA Notes</h1>
         </header>
         
         
@@ -1379,7 +1378,7 @@ Two main approaches:</p>
             <section class="content-section" id="basic-efficiency-classes-levitin">
                 <h3 class="section-heading"><strong>Basic Efficiency Classes (Levitin)</strong></h3>
             
-<p class="paragraph">| Class        | Name           | Example Algorithms                          |
+<pre class="paragraph">| Class        | Name           | Example Algorithms                          |
 |--------------|----------------|---------------------------------------------|
 | 1            | Constant       | Accessing an array element, assignment      |
 | log n        | Logarithmic    | Binary search                               |
@@ -1388,7 +1387,7 @@ Two main approaches:</p>
 | n²           | Quadratic      | Simple sorting (Bubble, Selection, Insertion) |
 | n³           | Cubic          | Matrix multiplication (naive)               |
 | 2ⁿ           | Exponential    | Traveling Salesman (brute force), Towers of Hanoi |
-| n!           | Factorial      | Generating all permutations (brute force)   |</p>
+| n!           | Factorial      | Generating all permutations (brute force)   |</pre>
 <hr class="content-hr">
 </section>
 
@@ -2385,12 +2384,13 @@ while queue is not empty do
             <section class="content-section" id="comparison-dfs-vs-bfs">
                 <h3 class="section-heading"><strong>Comparison: DFS vs BFS</strong></h3>
             
-<p class="paragraph">| Aspect | DFS | BFS |
-|--------|-----|-----|
-| Data Structure | Stack | Queue |
-| Memory | O(depth) | O(width) |
-| Shortest Path | Not guaranteed | Guaranteed (unweighted) |
-| When to Use | Deep graphs, memory limited | Shortest path, level-order |</p>
+<pre class="paragraph">
+| Aspect         | DFS                         | BFS                        |
+|----------------|-----------------------------|----------------------------|
+| Data Structure | Stack                       | Queue                      |
+| Memory         | O(depth)                    | O(width)                   |
+| Shortest Path  | Not guaranteed              | Guaranteed (unweighted)    |
+| When to Use    | Deep graphs, memory limited | Shortest path, level-order |</pre>
 </section>
 
             <section class="content-section" id="summary-of-brute-force-techniques">
@@ -2488,11 +2488,12 @@ while queue is not empty do
             <section class="content-section" id="comparison-with-divide-and-conquer">
                 <h3 class="section-heading"><strong>Comparison with Divide-and-Conquer</strong></h3>
             
-<p class="paragraph">| Aspect | Decrease-and-Conquer | Divide-and-Conquer |
-|--------|-------------------|------------------|
-| <strong>Problem Division</strong> | Reduces to ONE smaller instance | Divides into TWO or MORE subproblems |
+<pre class="paragraph">
+| Aspect               | Decrease-and-Conquer                   | Divide-and-Conquer                      |
+|----------------------|----------------------------------------|-----------------------------------------|
+| <strong>Problem Division</strong>     | Reduces to ONE smaller instance        | Divides into TWO or MORE subproblems    |
 | <strong>Solution Combination</strong> | Extends solution from smaller instance | Combines solutions from all subproblems |
-| <strong>Examples</strong> | Insertion Sort, Binary Search | Merge Sort, Quick Sort |</p>
+| <strong>Examples</strong>             | Insertion Sort, Binary Search          | Merge Sort, Quick Sort                  |</pre>
 <hr class="content-hr">
 </section>
 
@@ -4686,7 +4687,7 @@ result = a - b  # Should be 0.000000000000001
         
         <footer class="document-footer">
             <div class="footer-content">
-                <p>Document generated on January 01, 2026 at 20:55</p>
+                <p>Document generated on January 02, 2026 at 18:05</p>
                 <p class="document-stats">43 sections • 43 code blocks</p>
             </div>
         </footer>
